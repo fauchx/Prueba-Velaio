@@ -13,7 +13,6 @@ import { CommonModule } from '@angular/common';
 export class TodoComponent {
   TodoList = signal<TodoModel[]>([]);
 
-  
   newPersonName = new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.minLength(5)] });
   newPersonAge = new FormControl<number | null>(null, { validators: [Validators.required, Validators.min(18)] });
   newPersonSkill = new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.minLength(2)] });
@@ -106,7 +105,7 @@ export class TodoComponent {
     );
   }
 
-  // Añadir una persona a una tarea
+  
   addPersonToTask(taskId: number) {
     if (this.newPersonName.valid && this.newPersonAge.valid && this.newPersonSkill.valid) {
       const newPerson: Person = {
