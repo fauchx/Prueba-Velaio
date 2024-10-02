@@ -18,7 +18,7 @@
         <button class="edit-btn" (click)="updateTodoEditingModel(todo.id)">Editar</button>
         <button class="delete-btn" (click)="removeTodo(todo.id)">Eliminar</button>
   
-        <!-- Sección para personas asociadas a la tarea -->
+        
         <div *ngIf="todo.people?.length">
           <h3>Personas:</h3>
           <ul>
@@ -42,12 +42,12 @@
           </ul>
         </div>
   
-        <!-- Formulario para añadir nueva persona -->
+        
         <div>
           <h3>Añadir Persona</h3>
-          <input [formControl]="newPersonName" placeholder="Nombre completo">
+          <input [formControl]="newPersonName" placeholder="Nombre ">
           <input [formControl]="newPersonAge" type="number" placeholder="Edad">
-          <input [formControl]="newPersonSkill" placeholder="Habilidad inicial">
+          <input [formControl]="newPersonSkill" placeholder="Habilidad ">
           <button (click)="addPersonToTask(todo.id)">Añadir Persona</button>
         </div>
       </li>

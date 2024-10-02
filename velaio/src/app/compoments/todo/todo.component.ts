@@ -1,23 +1,27 @@
 import { Component, computed, effect, signal } from '@angular/core';
 import { FilterType, Person, TodoModel } from '../../models/todo';
-import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';  // Agregar FormsModule
+import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';  
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-todo',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule], // Agregar FormsModule aquí
+  imports: [CommonModule, FormsModule, ReactiveFormsModule], 
   templateUrl: './todo.component.html',
   styleUrl: './todo.component.css'
 })
 export class TodoComponent {
   TodoList = signal<TodoModel[]>([]);
 
-  // Form controls para personas y habilidades
+  
   newPersonName = new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.minLength(5)] });
   newPersonAge = new FormControl<number | null>(null, { validators: [Validators.required, Validators.min(18)] });
   newPersonSkill = new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.minLength(2)] });
-  newSkill = new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.minLength(2)] }); // Control para habilidades
+  newSkill = new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.minLength(2)] }); 
+  newTodo = new FormControl('', {
+    nonNullable: true,
+    validators: [Validators.required, Validators.minLength(3)]
+  });
 
   constructor() {
     effect(() => {
@@ -55,10 +59,6 @@ export class TodoComponent {
     this.Filter.set(FilterString);
   }
 
-  newTodo = new FormControl('', {
-    nonNullable: true,
-    validators: [Validators.required, Validators.minLength(3)]
-  });
 
   addTodo() {
     const newTaskTitle = this.newTodo.value.trim();

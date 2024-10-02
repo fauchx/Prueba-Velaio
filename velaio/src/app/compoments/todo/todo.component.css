@@ -1,21 +1,24 @@
 .todolist-wrapper{
-    @apply bg-slate-500 p-8 w-fit mt-8 mx-auto rounded-lg
+    @apply bg-slate-200 p-8 w-fit mt-8 mx-auto rounded-lg
 }
 
 .title{
     @apply text-3xl font-bold text-center mb-4
 }
-
+body{
+    font-family: 'Times New Roman', Times, serif
+}
 .new-todo{
-    @apply relative flex items-center rounded-lg overflow-hidden
+    @apply relative flex items-center rounded-lg 
 }
 
 .new-todo input{
-    @apply w-64 p-2 rounded-lg bg-slate-800;
+    @apply w-64 p-2 rounded-md bg-gray-300 text-black ;
 }
 
+
 .new-todo button{
-    @apply absolute right-0 bg-gray-500 text-lg font-black h-full px-2
+    @apply h-10 right-0 bg-slate-500 text-lg font-black  px-3 rounded-lg
 }
 
 .filters{
@@ -23,11 +26,11 @@
 }
 
 .filters button{
-    @apply px-2 rounded-lg bg-slate-800
+    @apply px-2 rounded-lg bg-slate-500
 }
 
 .filters button.active{
-    @apply bg-gray-500
+    @apply bg-gray-300
 }
 
 .todolist{
@@ -35,7 +38,7 @@
 }
 
 .todolist li{
-    @apply flex bg-gray-500 px-4 py-2 rounded-lg items-center gap-2
+    @apply flex bg-slate-500 px-4 py-2 rounded-lg items-center gap-2
 }
 
 .todolist li.todo label{
@@ -51,7 +54,7 @@
 }
 
 .todolist li.todo input[type="checkbox"]{
-    @apply w-4 h-4 cursor-pointer
+    @apply w-4 h-4 cursor-pointer rounded-md
 }
 
 .todolist li.todo-editing input[type="text"]{
