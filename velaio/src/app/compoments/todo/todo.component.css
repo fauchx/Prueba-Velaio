@@ -57,3 +57,55 @@
 .todolist li.todo-editing input[type="text"]{
     @apply w-full bg-neutral-500 rounded-lg px-2 outline-none
 }
+
+.people-list {
+    @apply mt-4;
+}
+
+.person-info {
+    @apply flex justify-between items-center mb-2;
+}
+
+.skills-list {
+    @apply flex flex-wrap gap-2 mb-2;
+}
+
+.add-skill-input {
+    @apply mt-2 p-2 w-full bg-slate-800 text-white rounded-lg;
+}
+
+.add-skill-btn {
+    @apply mt-2 bg-green-500 text-white font-bold py-1 px-4 rounded;
+}
+
+.new-person-form {
+    @apply mt-4 flex flex-col gap-2;
+}
+
+.person-input {
+    @apply p-2 w-full bg-slate-800 text-white rounded-lg;
+}
+
+.add-person-btn {
+    @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+}
+
+.remove-person-btn {
+    @apply bg-red-500 text-white font-bold py-1 px-4 rounded;
+}
+
+.remove-skill-btn {
+    @apply text-xs bg-red-500 text-white font-bold py-1 px-2 rounded;
+}
+
+.actions {
+    @apply flex gap-2 ml-auto;
+}
+
+.edit-btn {
+    @apply text-green-600;
+}
+
+.delete-btn {
+    @apply text-red-700;
+}
