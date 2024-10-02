@@ -4,6 +4,7 @@
       <input type="text" (keydown.enter)="addTodo()" placeholder="Escribe una nueva tarea" [formControl]="newTodo">
       <button (click)="addTodo()">+</button>
     </div>
+  
     <div class="filters">
       <button (click)="changeFilter('all')" [class.active]="Filter() === 'all'">Todos</button>
       <button (click)="changeFilter('active')" [class.active]="Filter() === 'active'">Activos</button>
@@ -18,7 +19,6 @@
         <button class="edit-btn" (click)="updateTodoEditingModel(todo.id)">Editar</button>
         <button class="delete-btn" (click)="removeTodo(todo.id)">Eliminar</button>
   
-        
         <div *ngIf="todo.people?.length">
           <h3>Personas:</h3>
           <ul>
@@ -35,14 +35,13 @@
                     <button (click)="removeSkillFromPerson(todo.id, person.id, skill)">Eliminar habilidad</button>
                   </li>
                 </ul>
-                <input [(ngModel)]="newSkill.value" placeholder="Añadir habilidad">
+                <input [formControl]="newSkill" placeholder="Añadir habilidad">
                 <button (click)="addSkillToPerson(todo.id, person.id, newSkill.value)">Añadir habilidad</button>
               </div>
             </li>
           </ul>
         </div>
   
-        
         <div>
           <h3>Añadir Persona</h3>
           <input [formControl]="newPersonName" placeholder="Nombre ">

@@ -147,7 +147,7 @@ export class TodoComponent {
       this.newSkill.reset();
     }
   }
-
+  
   removeSkillFromPerson(taskId: number, personId: number, skill: string) {
     this.TodoList.update(prevTodos =>
       prevTodos.map(todo => {
