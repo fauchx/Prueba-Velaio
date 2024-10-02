@@ -1,0 +1,27 @@
+<section class="todolist-wrapper">
+    <h1 class="title">
+        TODO
+    </h1>
+    <div class="new-todo">
+        <input type="text" placeholder="Escribe una nueva tarea">
+        <button>+</button>
+    </div>
+    <div class="filters">
+        <button (click)="changeFilter('all')" [class.active]="Filter() === 'all'">todos</button>
+        <button (click)="changeFilter('active')" [class.active]="Filter() === 'active'">activos</button>
+        <button (click)="changeFilter('completed')" [class.active]="Filter() === 'completed'">completados</button>
+    </div>
+
+    <ul class="todolist">
+        <li class="todo">
+            <input type="checkbox">
+            <label>titulo tarea</label>
+            <button>Editar</button>
+            <button>Eliminar</button>
+        </li>
+        <li class="todo-editing">
+            <input type="text" placeholder="editar tarea">
+            
+        </li>
+    </ul>
+</section>
